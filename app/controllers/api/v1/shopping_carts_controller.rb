@@ -1,9 +1,4 @@
 class Api::V1::ShoppingCartsController < ApplicationController
-
-  # def index
-  #   @carts = ShoppingCart.all
-  # end
-
   def index
     @cart = @current_cart
     render :index, status: :ok
