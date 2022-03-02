@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   private
     def current_cart
       if session[:shopping_cart_id]
-        cart = ShoppingCart.find_by(:id => session[:shopping_cart_id])
+        cart = ShoppingCart.includes(:product_shopping_carts, :products).find_by(:id => session[:shopping_cart_id])
         if cart.present?
           @current_cart = cart
         else

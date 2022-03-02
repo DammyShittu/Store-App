@@ -1,7 +1,7 @@
 class Api::V1::ProductShoppingCartsController < ApplicationController
 
   def create
-    selected_product = Product.find(params[:product_id])
+    selected_product = Product.find_by(id: params[:product_id])
     cart = @current_cart
 
     if cart.products.include?(selected_product)
