@@ -1,7 +1,7 @@
 class Api::V1::ShoppingCartsController < ApplicationController
-  def index
+  def show
     @cart = @current_cart
-    render :index, status: :ok
+    render :show, status: :ok
   end
 
   def destroy
